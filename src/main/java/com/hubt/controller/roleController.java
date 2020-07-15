@@ -15,7 +15,7 @@ import com.hubt.service.roleService;
 
 @Controller
 @RequestMapping("/role")
-public class RoleController {
+public class roleController {
 	@Autowired
 	roleService rservice;
 
@@ -25,7 +25,7 @@ public class RoleController {
 	 public String getRole(Model model) {
 		List<role> all = rservice.findAll();
 		model.addAttribute("role", all);
-		 return "pages/list";
+		 return "role/roles";
 	 }
 	 
 }

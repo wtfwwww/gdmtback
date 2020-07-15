@@ -16,10 +16,10 @@
 	<!-- dataSource -->
 	<bean id="dataSource"
 		class="com.mchange.v2.c3p0.ComboPooledDataSource"
-		destroy-method="close">
+		>
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl"
-			value="jdbc:mysql://localhost:3306/coal?characterEncoding=utf-8" />
+			value="jdbc:mysql://localhost:3306/coal?serverTimezone=UTC" />
 		<property name="user" value="root" />
 		<property name="password" value="123456" />
 	</bean>

@@ -23,24 +23,25 @@ public class roleServiceImpl implements roleService {
 	@Override
 	public void insert(role record) {
 		// TODO Auto-generated method stub
+		rmapper.insert(record);
 
 	}
 
 	@Override
 	public boolean updateByPrimaryKey(role record) {
 		// TODO Auto-generated method stub
-		return false;
+		return rmapper.updateByPrimaryKey(record);
 	}
 
 	@Override
 	public boolean deleteByPrimaryKey(String roleUuid) {
 		// TODO Auto-generated method stub
-		return false;
+		return rmapper.deleteByPrimaryKey(roleUuid);
 	}
 
 	@Override
 	public role selectByPrimaryKey(String roleUuid) {
 		// TODO Auto-generated method stub
-		return null;
+		return rmapper.selectByPrimaryKey(roleUuid);
 	}
 }
