@@ -4,11 +4,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="/tabledata.jsp"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.tree.css" />
+<style type="text/css">
+.tree li span {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid #999;
+	border-radius: 5px;
+	padding: 3px 8px;
+	display: inline;
+	text-decoration: none
+}
+</style>
 </head>
 <body>
-	<div class="tree well"  onclick="abc()">
-		<input id="result" type="hidden">
+	<div class="tree well" onclick="abc()">
 		<ul id="in">
 		</ul>
 		<ul id="out">
@@ -18,7 +29,7 @@
 		
 		$(function() {
 			
-			$.get('${pageContext.request.contextPath}/res/getResourcesByParentId', { parentId : 'root' }, function(root) {
+			$.get('${pageContext.request.contextPath}/res/getResourcesByParentId', { parent_id : 'root' }, function(root) {
 				for (var i = 0; i < root.children.length; i++) {
 					getChildren_in(root.children[i]);
 					if (root.children[i].hasChildren){
@@ -34,8 +45,10 @@
 		
 		var html_in = '';
 		function getChildren_in(org) {
+			debugger;
 			if (!org.hasChildren) {
-					html_in += '<li><span id="'+ org.id +'"><i class="icon-leaf"></i> ' + org.name + '</span></li>';
+					html_in += '<li><div class="checkbox icheck-clouds"><input type="checkbox" name="res_uuid" title="' + org.pid + '" id="'+org.id+'"><label for="'
+					+org.id+'"><span id="'+ org.id +'"><i class="icon-leaf"></i> ' + org.name + '</span></label></div></li>';
 			} else {
 				html_in += '<li><span id="'+ org.id +'"><i class="icon-minus-sign"></i> ' + org.name + '</span>';
 				html_in += '<ul>';
@@ -68,19 +81,10 @@
 				e.stopPropagation();
 			});
 			
-			$('li > span').on('click',function(e) {
-				var oks = $('.icon-ok');
-				if(oks != undefined || oks.length > 0){
-					$('.icon-ok').remove();
-				}				
-			
-				$(this).after('&nbsp;&nbsp;<i class="icon-ok"></i>');
-				$('#result').val($(this).text()+ ',' + $(this).attr('id'));
-			});
-			
 			count++;
 		}
+		
 	</script>
-	
+
 </body>
 </html>

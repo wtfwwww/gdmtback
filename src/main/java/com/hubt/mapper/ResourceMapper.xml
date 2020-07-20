@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hubt.mapper.ResourceMapper">
+	<resultMap id="BaseResultMap"
+		type="com.hubt.model.Resource">
+		<id column="menu_id" jdbcType="VARCHAR" property="menuId" />
+		<result column="dir_code" jdbcType="VARCHAR" property="dirCode" />
+		<result column="dir_name" jdbcType="VARCHAR" property="dirName" />
+		<result column="dir_level_number" jdbcType="INTEGER"
+			property="dirLevelNumber" />
+		<result column="dir_type" jdbcType="CHAR" property="dirType" />
+		<result column="resource_id" jdbcType="VARCHAR"
+			property="resourceId" />
+		<result column="parent_id" jdbcType="VARCHAR"
+			property="parentId" />
+		<result column="isitem" jdbcType="CHAR" property="isitem" />
+		<result column="dir_order" jdbcType="INTEGER"
+			property="dirOrder" />
+		<result column="status" jdbcType="CHAR" property="status" />
+		<result column="flag" jdbcType="CHAR" property="flag" />
+		<result column="menu_group_id" jdbcType="VARCHAR"
+			property="menuGroupId" />
+		<result column="locale" jdbcType="VARCHAR" property="locale" />
+		<result column="res_uuid" jdbcType="VARCHAR" property="resUuid" />
+		<result column="realid" jdbcType="VARCHAR" property="realid" />
+		<result column="istransfer" jdbcType="VARCHAR"
+			property="istransfer" />
+		<result column="menu_type" jdbcType="VARCHAR"
+			property="menuType" />
+	</resultMap>
+	
+	
+
+	<sql id="Base_Column_List">
+		menu_id, dir_code, dir_name, dir_level_number, dir_type, resource_id,
+		parent_id,
+		isitem, dir_order, status, flag, menu_group_id, locale, res_uuid, realid,
+		istransfer,
+		menu_type
+	</sql>
+
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from pt_menu_directory
+		where menu_id = #{menuId,jdbcType=VARCHAR}
+	</delete>
+
+
+	<insert id="insert" parameterType="ParentResource">
+		insert into pt_menu_directory (menu_id, dir_code, dir_name,
+		dir_level_number, dir_type, resource_id,
+		parent_id, isitem, dir_order,
+		status, flag, menu_group_id,
+		locale, res_uuid, realid,
+		istransfer, menu_type)
+		values (#{menuId,jdbcType=VARCHAR}, #{dirCode,jdbcType=VARCHAR},
+		#{dirName,jdbcType=VARCHAR},
+		#{dirLevelNumber,jdbcType=INTEGER}, #{dirType,jdbcType=CHAR}, #{resourceId,jdbcType=VARCHAR},
+		#{parentId,jdbcType=VARCHAR}, #{isitem,jdbcType=CHAR},
+		#{dirOrder,jdbcType=INTEGER},
+		#{status,jdbcType=CHAR}, #{flag,jdbcType=CHAR}, #{menuGroupId,jdbcType=VARCHAR},
+		#{locale,jdbcType=VARCHAR}, #{resUuid,jdbcType=VARCHAR},
+		#{realid,jdbcType=VARCHAR},
+		#{istransfer,jdbcType=VARCHAR}, #{menuType,jdbcType=VARCHAR})
+	</insert>
+
+	<insert id="insertSelective" parameterType="ParentResource">
+		insert into pt_menu_directory
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="menuId != null">
+				menu_id,
+			</if>
+			<if test="dirCode != null">
+				dir_code,
+			</if>
+			<if test="dirName != null">
+				dir_name,
+			</if>
+			<if test="dirLevelNumber != null">
+				dir_level_number,
+			</if>
+			<if test="dirType != null">
+				dir_type,
+			</if>
+			<if test="resourceId != null">
+				resource_id,
+			</if>
+			<if test="parentId != null">
+				parent_id,
+			</if>
+			<if test="isitem != null">
+				isitem,
+			</if>
+			<if test="dirOrder != null">
+				dir_order,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="flag != null">
+				flag,
+			</if>
+			<if test="menuGroupId != null">
+				menu_group_id,
+			</if>
+			<if test="locale != null">
+				locale,
+			</if>
+			<if test="resUuid != null">
+				res_uuid,
+			</if>
+			<if test="realid != null">
+				realid,
+			</if>
+			<if test="istransfer != null">
+				istransfer,
+			</if>
+			<if test="menuType != null">
+				menu_type,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="menuId != null">
+				#{menuId,jdbcType=VARCHAR},
+			</if>
+			<if test="dirCode != null">
+				#{dirCode,jdbcType=VARCHAR},
+			</if>
+			<if test="dirName != null">
+				#{dirName,jdbcType=VARCHAR},
+			</if>
+			<if test="dirLevelNumber != null">
+				#{dirLevelNumber,jdbcType=INTEGER},
+			</if>
+			<if test="dirType != null">
+				#{dirType,jdbcType=CHAR},
+			</if>
+			<if test="resourceId != null">
+				#{resourceId,jdbcType=VARCHAR},
+			</if>
+			<if test="parentId != null">
+				#{parentId,jdbcType=VARCHAR},
+			</if>
+			<if test="isitem != null">
+				#{isitem,jdbcType=CHAR},
+			</if>
+			<if test="dirOrder != null">
+				#{dirOrder,jdbcType=INTEGER},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=CHAR},
+			</if>
+			<if test="flag != null">
+				#{flag,jdbcType=CHAR},
+			</if>
+			<if test="menuGroupId != null">
+				#{menuGroupId,jdbcType=VARCHAR},
+			</if>
+			<if test="locale != null">
+				#{locale,jdbcType=VARCHAR},
+			</if>
+			<if test="resUuid != null">
+				#{resUuid,jdbcType=VARCHAR},
+			</if>
+			<if test="realid != null">
+				#{realid,jdbcType=VARCHAR},
+			</if>
+			<if test="istransfer != null">
+				#{istransfer,jdbcType=VARCHAR},
+			</if>
+			<if test="menuType != null">
+				#{menuType,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+
+	<select id="selectByPrimaryKey" parameterType="java.lang.String"
+		resultType="com.hubt.vo.ResourceVo">
+		select
+		pt_menu_directory.*,pt_res.res_uuid,pt_res.res_url
+		from pt_menu_directory,pt_res
+		where pt_menu_directory.res_uuid=pt_res.res_uuid
+	</select>
+
+	<update id="updateByPrimaryKeySelective"
+		parameterType="ParentResource">
+		update pt_menu_directory
+		<set>
+			<if test="dirCode != null">
+				dir_code = #{dirCode,jdbcType=VARCHAR},
+			</if>
+			<if test="dirName != null">
+				dir_name = #{dirName,jdbcType=VARCHAR},
+			</if>
+			<if test="dirLevelNumber != null">
+				dir_level_number = #{dirLevelNumber,jdbcType=INTEGER},
+			</if>
+			<if test="dirType != null">
+				dir_type = #{dirType,jdbcType=CHAR},
+			</if>
+			<if test="resourceId != null">
+				resource_id = #{resourceId,jdbcType=VARCHAR},
+			</if>
+			<if test="parentId != null">
+				parent_id = #{parentId,jdbcType=VARCHAR},
+			</if>
+			<if test="isitem != null">
+				isitem = #{isitem,jdbcType=CHAR},
+			</if>
+			<if test="dirOrder != null">
+				dir_order = #{dirOrder,jdbcType=INTEGER},
+			</if>
+			<if test="status != null">
+				status = #{status,jdbcType=CHAR},
+			</if>
+			<if test="flag != null">
+				flag = #{flag,jdbcType=CHAR},
+			</if>
+			<if test="menuGroupId != null">
+				menu_group_id = #{menuGroupId,jdbcType=VARCHAR},
+			</if>
+			<if test="locale != null">
+				locale = #{locale,jdbcType=VARCHAR},
+			</if>
+			<if test="resUuid != null">
+				res_uuid = #{resUuid,jdbcType=VARCHAR},
+			</if>
+			<if test="realid != null">
+				realid = #{realid,jdbcType=VARCHAR},
+			</if>
+			<if test="istransfer != null">
+				istransfer = #{istransfer,jdbcType=VARCHAR},
+			</if>
+			<if test="menuType != null">
+				menu_type = #{menuType,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where menu_id = #{menuId,jdbcType=VARCHAR}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="com.hubt.vo.ResourceVo">
+		update pt_menu_directory
+		set dir_code = #{dir_code,jdbcType=VARCHAR},
+		dir_name = #{dir_name,jdbcType=VARCHAR},
+		dir_level_number = #{dir_level_number,jdbcType=INTEGER},
+		dir_type = #{dir_type,jdbcType=CHAR},
+		resource_id = #{resource_id,jdbcType=VARCHAR},
+		parent_id = #{parent_id,jdbcType=VARCHAR},
+		isitem = #{isitem,jdbcType=CHAR},
+		dir_order = #{dir_order,jdbcType=INTEGER},
+		status = #{status,jdbcType=CHAR},
+		flag = #{flag,jdbcType=CHAR},
+		menu_group_id = #{menu_group_id,jdbcType=VARCHAR},
+		locale = #{locale,jdbcType=VARCHAR},
+		res_uuid = #{res_uuid,jdbcType=VARCHAR},
+		realid = #{realid,jdbcType=VARCHAR},
+		istransfer = #{istransfer,jdbcType=VARCHAR},
+		menu_type = #{menu_type,jdbcType=VARCHAR}
+		where menu_id = #{menu_id,jdbcType=VARCHAR}
+	</update>
+
+	<select id="findAll" resultType="ParentResource">
+		select dir_code dirCode,dir_name dirName,dir_level_number
+		dirLevelNumber,dir_type dirType,resource_id resourceId,parent_id
+		parentId,isitem isitem,dir_order dirOrder,status status,flag flag,
+		menu_group_id menuGroupId,locale locale,res_uuid resUuid,realid
+		realid,istransfer istransfer,menu_type menuType from pt_menu_directory
+	</select>
+
+	<select id="getResources" resultType="com.hubt.vo.ResourceVo">
+		select
+		pt_menu_directory.*,pt_res.res_uuid,pt_res.res_url
+		from pt_menu_directory,pt_res
+		where pt_menu_directory.res_uuid=pt_res.res_uuid
+	</select>
+	
+	
+	
+	<select id="getParent" resultType="com.hubt.vo.ResourceVo">
+		select 
+		pt_menu_directory.*
+		from pt_menu_directory
+		where menu_id=#{parentId}
+	</select>
+	
+	
+	<select id="getParentById" resultType="ParentResource">
+		select 
+		pt_menu_directory.*
+		from pt_menu_directory
+		where parent_id=#{parentId}
+	</select>
+	
+	<select id="total" resultType="int">
+        SELECT count(*) FROM pt_res
+    </select>
+    
+    
+    <select id="getResByParentId" resultType="Resource" parameterType="java.lang.String">
+  select
+  pt_menu_directory.*
+		from pt_menu_directory
+  where parent_id=#{parent_id}
+  
+  </select>
+    
+</mapper>

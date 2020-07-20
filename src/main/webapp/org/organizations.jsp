@@ -33,7 +33,7 @@
 				striped : true,
 				cache : false,
 				pagination : true,
-				sidePagination : "server",
+				sidePagination : "client",
 				pageNumber : 1,
 				pageSize : 10,
 				pageList : [ 10, 25, 50, 100 ],
@@ -42,11 +42,11 @@
 				clickToSelect : true,
 				uniqueId : "organ_uuid",
 				columns : [ { checkbox : true,  visible: true }, 
-							{ field : 'organ_code', title : '组织编码', width : 120, align : 'center' },
-							{ field : 'organ_name', title : '组织名称', width : 120, align : 'center' },
-							{ field : 'organ_type', title : '组织类型', width : 120, align : 'center' },
-							{ field : 'in_use', title : '是否在用', width : 120, align : 'center' },
-							{ field : 'parent.organ_name', title : '父组织名称', width : 120, align : 'center' },
+							{ field : 'organCode', title : '组织编码', width : 120, align : 'center' },
+							{ field : 'organName', title : '组织名称', width : 120, align : 'center' },
+							{ field : 'organType', title : '组织类型', width : 120, align : 'center' },
+							{ field : 'inUse', title : '是否在用', width : 120, align : 'center' },
+							{ field : 'parent.organName', title : '父组织名称', width : 120, align : 'center' },
 							{ field : 'shortname', title : '组织简称', width : 120, align : 'center' },
 							{ field : 'modtime', title : '修改时间' ,formatter : dateFormatter, width : 120, align : 'center'}
 						  ],
@@ -66,7 +66,7 @@
 					toastr.info('请选择一条数据进行数据编辑操作!');
 					return;
 				}
-				window.parent.openIframe('${pageContext.request.contextPath}/org/updateOrganization.jsp?id=' + orgs[0].organ_uuid);
+				window.parent.openIframe('${pageContext.request.contextPath}/org/updateOrganization.jsp?id=' + orgs[0].organUuid);
 			});			
 			
 			$('#btn_delete').click(function(){
@@ -76,7 +76,7 @@
 					toastr.info('请选择一条数据进行数据编辑操作!');
 					return;
 				}
-				window.parent.openModel('${pageContext.request.contextPath}/deleteModal.jsp?id=' + orgs[0].organ_uuid + '&type=org');
+				window.parent.openModel('${pageContext.request.contextPath}/deleteModal.jsp?id=' + orgs[0].organUuid + '&type=org');
 			});	
 		});
 	

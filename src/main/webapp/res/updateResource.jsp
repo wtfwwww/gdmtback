@@ -119,7 +119,7 @@
 			};
 			
 			//初始化页面
-			$.get('${pageContext.request.contextPath}/res/getResource', {uuid : $('#res_uuid').val()}, function (res) {
+			$.get('${pageContext.request.contextPath}/res/getResource', {menu_id : $('#res_uuid').val()}, function (res) {
 				debugger;
 				$('#res_url').val(res.res_url);
 				$('#dir_code').val(res.dir_code);

@@ -23,18 +23,18 @@
 				striped : true,
 				cache : false,
 				pagination : true,
-				sidePagination : "server",
+				sidePagination : "client",
 				pageNumber : 1,
-				pageSize : 10,
+				pageSize : 6,
 				pageList : [ 10, 25, 50, 100 ],
 				showColumns : true,
 				showRefresh : true,
 				clickToSelect : true,
-				uniqueId : "dutyId",
+				uniqueId : "dutyid",
 				columns : [ { field : 'name', title : '岗位名称', width : 200},
-							{ field : 'organ.organ_name', title : '组织信息', width : 200},
-							{ field : 'role.role_name', title : '角色信息', width : 200},
-							{ field:'dutyId', title : '操作', width : 100, align : 'center', formatter : 
+							{ field : 'organ_name', title : '组织信息', width : 200},
+							{ field : 'role_name', title : '角色信息', width : 200},
+							{ field:'dutyid', title : '操作', width : 100, align : 'center', formatter : 
 								function actionFormatter(value, row, index) {
 									var result = '';
 									result += '<a href="#" class="btn btn-sm" onclick="updateDuty(\'' + value + '\')"><span class="fa fa-edit"></span>&nbsp;编辑</a>';

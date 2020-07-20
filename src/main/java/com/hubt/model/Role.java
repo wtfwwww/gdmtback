@@ -1,6 +1,6 @@
 package com.hubt.model;
 
-public class role {
+public class Role {
 	private String roleUuid;
 
     private String roleId;
@@ -11,12 +11,12 @@ public class role {
         return roleUuid;
     }
 
-    public role() {
+    public Role() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public role(String roleUuid, String roleId, String roleName) {
+	public Role(String roleUuid, String roleId, String roleName) {
 		super();
 		this.roleUuid = roleUuid;
 		this.roleId = roleId;
@@ -24,7 +24,7 @@ public class role {
 	}
 
 	public void setRoleUuid(String roleUuid) {
-        this.roleUuid = roleUuid == null ? null : roleUuid.trim();
+        this.roleUuid = roleUuid;
     }
 
     public String getRoleId() {
@@ -42,4 +42,10 @@ public class role {
     public void setRoleName(String roleName) {
         this.roleName = roleName == null ? null : roleName.trim();
     }
+
+	@Override
+	public String toString() {
+		return "role [roleUuid=" + roleUuid + ", roleId=" + roleId + ", roleName=" + roleName + "]";
+	}
+    
 }

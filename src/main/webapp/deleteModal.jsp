@@ -22,12 +22,18 @@
 		<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
 	</div>
 
-	<input id="dataId" type="hidden" value="<%=request.getParameter("id")%>">
-	<input id="dataType" type="hidden" value="<%=request.getParameter("type")%>">
+	<input id="dataId" type="text" value=<%=request.getParameter("id") %> />
+	<input id="dataType" type="text" value=<%=request.getParameter("type")%> />
 
 	<script type="text/javascript">
+	     $(function(){
+	    	 //清除model缓存
+	    	 $("#_Modal").on("hidden.bs.modal", function() {
+				  $(this).removeData("bs.modal");
+			 });
+	     })
+	    
 		function deleteData(id, type) {
-		
 			$('#_Modal').modal('hide');
 	
 			var url = '';

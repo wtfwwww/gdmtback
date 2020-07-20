@@ -29,7 +29,7 @@
 		
 		$(function() {
 			
-			$.get('${pageContext.request.contextPath}/res/getResourcesByParentId', { parentId : 'root' }, function(root) {
+			$.get('${pageContext.request.contextPath}/res/getResourcesByParentId', { parent_id : 'root' }, function(root) {
 				for (var i = 0; i < root.children.length; i++) {
 					getChildren_in(root.children[i]);
 					if (root.children[i].hasChildren){
@@ -37,7 +37,7 @@
 					}
 				}
 				
-				$('#in').append('<li><span id="'+ root.id +'"><i class="icon-folder-open"></i> '+ root.name + '</span><ul>' + html_in + '</ul></li>');
+				$('#in').append('<li><span id="'+ root.menu_id +'"><i class="icon-folder-open"></i> '+ root.dir_name + '</span><ul>' + html_in + '</ul></li>');
 			
 			}, 'json');
 			
@@ -47,10 +47,10 @@
 		function getChildren_in(org) {
 			debugger;
 			if (!org.hasChildren) {
-					html_in += '<li><div class="checkbox icheck-clouds"><input type="checkbox" name="res_uuid" title="' + org.pid + '" id="'+org.id+'"><label for="'
-					+org.id+'"><span id="'+ org.id +'"><i class="icon-leaf"></i> ' + org.name + '</span></label></div></li>';
+					html_in += '<li><div class="checkbox icheck-clouds"><input type="checkbox" name="res_uuid" title="' + org.parent_id + '" id="'+org.res_uuid+'"><label for="'
+					+org.id+'"><span id="'+ org.menu_id +'"><i class="icon-leaf"></i> ' + org.dir_name + '</span></label></div></li>';
 			} else {
-				html_in += '<li><span id="'+ org.id +'"><i class="icon-minus-sign"></i> ' + org.name + '</span>';
+				html_in += '<li><span id="'+ org.menu_id +'"><i class="icon-minus-sign"></i> ' + org.dir_name + '</span>';
 				html_in += '<ul>';
 				for (var i = 0; i < org.children.length; i++) {
 					var child = org.children[i];

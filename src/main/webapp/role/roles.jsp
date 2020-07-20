@@ -49,10 +49,10 @@
 				showColumns : true,
 				showRefresh : true,
 				clickToSelect : true,
-				uniqueId : "role_uuid",
-				columns : [ { field : 'role_id', title : '角色编码' },
-							{ field : 'role_name', title : '角色名称' },
-							{ field:'role_uuid', title : '操作', width : 300, align : 'center', formatter : 
+				uniqueId : "role_Uuid",
+				columns : [ { field : 'roleId', title : '角色编码' },
+							{ field : 'roleName', title : '角色名称' },
+							{ field:'roleUuid', title : '操作', width : 300, align : 'center', formatter : 
 								function actionFormatter(value, row, index) {
 									var result = '';
 									result += '<a href="#" class="btn btn-sm" onclick="updateRole(\'' + value + '\')"><span class="fa fa-edit"></span>&nbsp;编辑</a>';
@@ -89,7 +89,7 @@
 			$('#roleId').val(id);
 		 	$.get('${pageContext.request.contextPath}/role/getResources', { roleId : id}, function (data) {
 		 		if(data.length > 0){
-		 			$('input[name="res_uuid"]').each(function(){
+		 			$('input[name="resUuid"]').each(function(){
 			 			if(data.indexOf($(this).attr('id')) != -1){
 			 				 $(this).attr('checked','checked');
 			 			}
@@ -103,7 +103,7 @@
 		function saveResource(){
 			var cks = '';
 			var pid = '';
-            $('input[name="res_uuid"]:checked').each(function(){ 
+            $('input[name="resUuid"]:checked').each(function(){ 
             	if(pid != $(this).attr('title')){
             		cks += $(this).attr('title')+','; 
             		pid = $(this).attr('title');

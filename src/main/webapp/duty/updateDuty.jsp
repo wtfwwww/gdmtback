@@ -22,7 +22,7 @@
 		<!-- panel-heading -->
 		<div class="panel-body nopadding">
 			<form id="roleForm" method="post" class="form-bordered">
-				<input id="dutyId" name="dutyId" type="hidden" value="<%=request.getParameter("id")%>">
+				<input id="dutyid" name="dutyid" type="hidden" value="<%=request.getParameter("id")%>">
 				<div class="form-group">
 					<label class="col-sm-4 control-label">岗位名称</label>
 					<div class="col-sm-8">
@@ -94,7 +94,7 @@
 			};
 			
 			//初始化页面
-			$.get('${pageContext.request.contextPath}/duty/getDuty', {uuid : $('#dutyId').val()}, function (duty) {
+			$.get('${pageContext.request.contextPath}/duty/getDuty', {dutyid : $('#dutyid').val()}, function (duty) {
 				$('#name').val(duty.name);
 				$('#parent_uuid').val(duty.organ.organ_uuid);
 				$('#parent_name').val(duty.organ.organ_name);
@@ -105,7 +105,7 @@
 			$.get('${pageContext.request.contextPath}/role/getRoles2', {}, function (data) {
 				var html = '';
 				for (var i = 0; i < data.length; i++) {
-					html += '<li><a href="#" id="' + data[i].role_uuid + '" onclick="chooseRole(this)">' + data[i].role_name + '</a></li>';
+					html += '<li><a href="#" id="' + data[i].roleUuid + '" onclick="chooseRole(this)">' + data[i].roleName + '</a></li>';
 				}
 				$('#selectRole').append(html);
 			}, "json");

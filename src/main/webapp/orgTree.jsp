@@ -18,7 +18,7 @@
 		
 		$(function() {
 			
-			$.get('${pageContext.request.contextPath}/org/getOrgsByParentId', { parentUUID : '-1' }, function(root) {
+			$.get('${pageContext.request.contextPath}/org/getOrgsByParentId', { parentUuid : '-1' }, function(root) {
 				for (var i = 0; i < root.children.length; i++) {
 					getChildren_in(root.children[i]);
 					if (root.children[i].hasChildren){

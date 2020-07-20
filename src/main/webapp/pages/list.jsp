@@ -8,24 +8,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>用户列表</h1>
-<table>
 <tr>
- <th>roleUuid</th>
- <th>roleid</th>
- <th>rolename</th>
- <th>修改</th>
- <th>删除</th>
+<th>UID</th>
+<th>rid</th>
+<th>rname</th>
 </tr>
-<c:forEach items="${role}" var="ro">
+<c:forEach items="${role}" var="u">
 <tr>
- <th>${role.roleUuid }</th>
- <th>${role.roleId }</th>
- <th>${role.roleName}</th>
- <th>修改</th>
- <th>删除</th>
+<th>${role.roleUuid}</th>
+<th>${role.roleId }</th>
+<th>${role.roleName }</th>
 </tr>
 </c:forEach>
-</table>
+ 
 </body>
 </html>

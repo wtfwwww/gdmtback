@@ -25,33 +25,33 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label">资源路径</label>
 					<div class="col-sm-8">
-						<input class="form-control" id="res_url" name="res_url" placeholder="请输入资源名称">
+						<input class="form-control" id="resUrl" name="resUrl" placeholder="请输入资源名称">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-4 control-label">菜单编号</label>
 					<div class="col-sm-8">
-						<input class="form-control" id="dir_code" name="dir_code" placeholder="请输入菜单编号">
+						<input class="form-control" id="dirCode" name="dirCode" placeholder="请输入菜单编号">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-4 control-label">菜单名称</label>
 					<div class="col-sm-8">
-						<input class="form-control" id="dir_name" name="dir_name" placeholder="请输入菜单名称">
+						<input class="form-control" id="dirName" name="dirName" placeholder="请输入菜单名称">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-4 control-label">菜单级数</label>
 					<div class="col-sm-8">
-						<input class="form-control" id="dir_level_number" name="dir_level_number" placeholder="请输入菜单级数">
+						<input class="form-control" id="dirLevelNumber" name="dirLevelNumber" placeholder="请输入菜单级数">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-4 control-label">父菜单信息</label>
 					<div class="col-sm-8">
 						<div class="input-group mb15">
-							<input id="parent_name" class="form-control" type="text" name="parent_name" placeholder="请选择父菜单信息"/>
-							<input id="parent_id" type="hidden" name="parent_id"/>
+							<input id="parentName" class="form-control" type="text" name="parentName" placeholder="请选择父菜单信息"/>
+							<input id="parentId" type="hidden" name="parentId"/>
 							<span class="input-group-addon" data-toggle="modal" data-target="#resTree"><i class="fa fa-paper-plane"></i></span> 
 						</div>
 					</div>
@@ -70,7 +70,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label">菜单顺序号</label>
 					<div class="col-sm-8">
-						<input class="form-control" id="dir_order" name="dir_order" placeholder="请输入菜单顺序号">
+						<input class="form-control" id="dirOrder" name="dirOrder" placeholder="请输入菜单顺序号">
 					</div>
 				</div>
 				<div class="form-group" style="text-align: center;">

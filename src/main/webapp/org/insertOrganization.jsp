@@ -26,14 +26,14 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label">组织编码</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" id="organ_code" name="organ_code" placeholder="请输入组织编码">
+						<input type="text" class="form-control" id="organCode" name="organCode" placeholder="请输入组织编码">
 					</div>
 				</div>
 				
 				<div class="form-group">
 					<label class="col-sm-4 control-label">组织名称</label>
 					<div class="col-sm-8">
-						<input class="form-control" id="organ_name" name="organ_name" placeholder="请输入组织名称">
+						<input class="form-control" id="organName" name="organName" placeholder="请输入组织名称">
 					</div>
 				</div>
 				
@@ -41,16 +41,16 @@
 					<label class="col-sm-4 control-label">组织类型</label>
 					<div class="col-sm-8">
 						<div class="radio icheck-silver icheck-inline">
-							<input type="radio" value="1" name="organ_type" id="organ_type1"><label for="organ_type1">1</label>
+							<input type="radio" value="1" name="organType" id="organType1"><label for="organType1">1</label>
 						</div>
 						<div class="radio icheck-silver icheck-inline">
-							<input type="radio" value="2" name="organ_type" id="organ_type2"><label for="organ_type2">2</label>
+							<input type="radio" value="2" name="organType" id="organType2"><label for="organType2">2</label>
 						</div>
 						<div class="radio icheck-silver icheck-inline">
-							<input type="radio" value="3" name="organ_type" id="organ_type3"><label for="organ_type3">3</label>
+							<input type="radio" value="3" name="organType" id="organType3"><label for="organType3">3</label>
 						</div>
 						<div class="radio icheck-silver icheck-inline">
-							<input type="radio" value="4" name="organ_type" id="organ_type4"><label for="organ_type4">4</label>
+							<input type="radio" value="4" name="organType" id="organ_type4"><label for="organType4">4</label>
 						</div>
 					</div>
 				</div>
@@ -58,10 +58,10 @@
 					<label class="col-sm-4 control-label">是否在用</label>
 					<div class="col-sm-8">
 						<div class="radio icheck-silver icheck-inline">
-							<input type="radio" value="Y" name="in_use" id="in_use1"><label for="in_use1">否</label>
+							<input type="radio" value="Y" name="inUse" id="inUse1"><label for="inUse1">否</label>
 						</div>
 						<div class="radio icheck-silver icheck-inline">
-							<input type="radio" value="N" name="in_use" id="in_use2"><label for="in_use2">是</label>
+							<input type="radio" value="N" name="inUse" id="inUse2"><label for="inUse2">是</label>
 						</div>
 					</div>
 				</div>
@@ -70,8 +70,8 @@
 					<label class="col-sm-4 control-label">父组织信息</label>
 					<div class="col-sm-8">
 						<div class="input-group mb15">
-							<input id="parent_name" class="form-control" type="text" name="parent_name" placeholder="请输入父组织信息"/>
-							<input id="parent_uuid" type="hidden" name="parent_uuid"/>
+							<input id="parentName" class="form-control" type="text" name="parentName" placeholder="请输入父组织信息"/>
+							<input id="parentUuid" type="hidden" name="parentUuid"/>
 							<span class="input-group-addon" data-toggle="modal" data-target="#orgTree"><i class="fa fa-paper-plane"></i></span> 
 						</div>
 					</div>
@@ -87,7 +87,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label">组织账号</label>
 					<div class="col-sm-8">
-						<input class="form-control" id="account_code" name="account_code" placeholder="请输入组织账号">
+						<input class="form-control" id="accountCode" name="accountCode" placeholder="请输入组织账号">
 					</div>
 				</div>
 
@@ -163,8 +163,8 @@
 
 		function getResult() {
 			var result = $('#result').val().split(',');
-			$('#parent_name').val(result[0]);
-			$('#parent_uuid').val(result[1]);
+			$('#parentName').val(result[0]);
+			$('#parentUuid').val(result[1]);
 			$("#orgTree").modal('hide'); //手动关闭
 		}
 		

@@ -33,7 +33,7 @@
 				striped : true,
 				cache : false,
 				pagination : true,
-				sidePagination : "server",
+				sidePagination : "client",
 				pageNumber : 1,
 				pageSize : 10,
 				pageList : [ 10, 25, 50, 100 ],
@@ -46,7 +46,7 @@
 							{ field : 'email', title : '邮箱', width : 200, align : 'center' },
 							{ field : 'mobile', title : '手机', width : 150, align : 'center' },
 							{ field : 'nice_name', title : '昵称', width : 130, align : 'center' },
-							{ field : 'organ.organ_name', title : '部门', width : 200, align : 'center' },
+							{ field : 'organ_name', title : '部门', width : 200, align : 'center' },
 							{ field : 'is_admin', title : '是否管理员' ,formatter : ifFormatter, width : 120, align : 'center'},
 							{ field : 'modtime', title : '修改时间' ,formatter : dateFormatter, align : 'center'}
 						  ],
