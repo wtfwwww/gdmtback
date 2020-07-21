@@ -64,6 +64,7 @@ public class UserController {
 		Date now = new Date();
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		user.setModtime(df.parse(df.format(new Date())));
+		user.setOrganUuid(user.getOrgan().getOrganUuid());
 		return this.uservice.saveUser(user);
 	}
 

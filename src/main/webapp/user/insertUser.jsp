@@ -66,8 +66,8 @@
 					<label class="col-sm-4 control-label">所属组织</label>
 					<div class="col-sm-8">
 						<div class="input-group mb15">
-							<input id="parent_name" class="form-control" type="text" name="organ.organ_name" placeholder="请选择组织信息"/>
-							<input id="parent_uuid" type="hidden" name="organ.organ_uuid"/>
+							<input id="parent_name" class="form-control" type="text" name="organ.organName" placeholder="请选择组织信息"/>
+							<input id="parent_uuid" type="hidden" name="organ.organUuid"/>
 							<span class="input-group-addon" data-toggle="modal" data-target="#orgTree"><i class="fa fa-paper-plane"></i></span> 
 						</div>
 					</div>
@@ -82,7 +82,7 @@
 				<div class="form-group">
 					<label class="col-sm-4 control-label">昵称</label>
 					<div class="col-sm-8">
-						<input class="form-control" id="nice_name" name="nice_name" placeholder="请输入用户昵称">
+						<input class="form-control" id="niceName" name="niceName" placeholder="请输入用户昵称">
 					</div>
 				</div>
 				
@@ -90,10 +90,10 @@
 					<label class="col-sm-4 control-label">是否管理员</label>
 					<div class="col-sm-8">
 						<div class="radio icheck-silver icheck-inline">
-							<input type="radio" value="0" name="is_admin" id="is_admin1"><label for="is_admin1">否</label>
+							<input type="radio" value="0" name="isAdmin" id="isAdmin1"><label for="isAdmin1">否</label>
 						</div>
 						<div class="radio icheck-silver icheck-inline">
-							<input type="radio" value="1" name="is_admin" id="is_admin2"><label for="is_admin2">是</label>
+							<input type="radio" value="1" name="isAdmin" id="isAdmin2"><label for="isAdmin2">是</label>
 						</div>
 					</div>
 				</div>
