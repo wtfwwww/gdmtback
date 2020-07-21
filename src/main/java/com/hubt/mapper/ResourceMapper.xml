@@ -270,8 +270,8 @@
 	<select id="getResources" resultType="com.hubt.vo.ResourceVo">
 		select
 		pt_menu_directory.*,pt_res.res_uuid,pt_res.res_url
-		from pt_menu_directory,pt_res
-		where pt_menu_directory.res_uuid=pt_res.res_uuid
+		from pt_res
+		right join pt_menu_directory on pt_menu_directory.res_uuid=pt_res.res_uuid
 	</select>
 	
 	
