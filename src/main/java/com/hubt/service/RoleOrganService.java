@@ -14,11 +14,11 @@ public interface RoleOrganService {
 	
 	//void insert (Duty duty);
 
-	void remove(String id);
+	boolean remove(String id);
 
 	RoleOrgan getDuty(String dutyid);
 
-	boolean update(RoleOrgan record);
+	boolean update(Duty record);
 
 	
 

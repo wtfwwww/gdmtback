@@ -119,11 +119,11 @@
 		where dutyid = #{dutyid,jdbcType=VARCHAR}
 	</select>
 
-	<update id="updateByPrimaryKey" parameterType="RoleOrgan">
+	<update id="updateByPrimaryKey" parameterType="Duty">
 		update pt_r_role_organ
 		set name = #{name,jdbcType=VARCHAR},
-		organ_uuid = #{organ_uuid,jdbcType=VARCHAR},
-		role_uuid = #{role_uuid,jdbcType=VARCHAR}
+		organ_uuid = #{organUuid,jdbcType=VARCHAR},
+		role_uuid = #{roleUuid,jdbcType=VARCHAR}
 		where dutyid = #{dutyid,jdbcType=VARCHAR}
 	</update>
 

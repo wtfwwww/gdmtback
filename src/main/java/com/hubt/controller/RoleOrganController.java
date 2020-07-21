@@ -45,7 +45,9 @@ public class RoleOrganController {
 
 	@RequestMapping("/update")
 	@ResponseBody
-	public boolean update(RoleOrgan record) {
+	public boolean update(Duty record) {
+		record.setOrganUuid(record.getOrgan().getOrganUuid());
+		record.setRoleUuid(record.getRole().getRoleUuid());
 		return this.rrogservice.update(record);
 
 	}
@@ -55,13 +57,15 @@ public class RoleOrganController {
 	public boolean insert(Duty duty) {
 		String uuid = UUID.randomUUID().toString().replace("-", "").toLowerCase();
 		duty.setDutyid(uuid);
+		duty.setOrganUuid(duty.getOrgan().getOrganUuid());
+		duty.setRoleUuid(duty.getRole().getRoleUuid());
 		return this.rrogservice.insert(duty);
 
 	}
 
 	@RequestMapping(value = "/remove")
-	public void remove(String id) {
-		this.rrogservice.remove(id);
+	public boolean remove(String id) {
+		return this.rrogservice.remove(id);
 
 	}
 

@@ -47,9 +47,9 @@ public class RoleOrganServiceImpl implements RoleOrganService {
 	 */
 
 	@Override
-	public void remove(String id) {
+	public boolean remove(String id) {
 		// TODO Auto-generated method stub
-		rrogmapper.deleteByPrimaryKey(id);
+		return rrogmapper.deleteByPrimaryKey(id);
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class RoleOrganServiceImpl implements RoleOrganService {
 	}
 
 	@Override
-	public boolean update(RoleOrgan record) {
+	public boolean update(Duty record) {
 		// TODO Auto-generated method stub
 		return rrogmapper.updateByPrimaryKey(record);
 	}

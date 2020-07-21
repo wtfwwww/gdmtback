@@ -30,7 +30,7 @@ public interface RoleOrganMapper {
 	int updateByPrimaryKeySelective(RoleOrgan record);
 
 	//
-	boolean updateByPrimaryKey(RoleOrgan record);
+	boolean updateByPrimaryKey(Duty record);
 
 	List<RoleOrganVo> findAll();
 
