@@ -183,16 +183,16 @@
 				$('#password').val(user.password);
 				$('#email').val(user.email);
 				$('#mobile').val(user.mobile);
-				$('#niceName').val(user.nice_name);
+				$('#niceName').val(user.niceName);
 				$('#pwdque').val(user.pwdque);
 				$('#pwdans').val(user.pwdans);
 				$('#remark').val(user.remark);
 				//组织数据赋值
-				$('#parentUuid').val(user.organ.organ_uuid);
-				$('#parentName').val(user.organ.organ_name);
+				$('#parentUuid').val(user.organ.organUuid);
+				$('#parentName').val(user.organ.organUame);
 				//单选属性赋值
-				$('input:radio[name=is_sun]')[user.is_sun].checked = true;
-				$('input:radio[name=is_admin]')[user.is_admin].checked = true;
+				$('input:radio[name=is_sun]')[user.isSun].checked = true;
+				$('input:radio[name=is_admin]')[user.isAdmin].checked = true;
 				$('input:radio[name=enabled]')[user.enabled].checked = true;
 				
 				if(user.duties != null || user.duties.length > 0){
